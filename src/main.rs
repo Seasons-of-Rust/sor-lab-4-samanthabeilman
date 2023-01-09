@@ -11,7 +11,10 @@ mod strings;
 
 pub enum FightResult {
     // Add variants for win, loss, tie, and draw
-    Win, Loss, Tie, Draw,
+    Win,
+    Loss,
+    Tie,
+    Draw,
 }
 
 fn main() {

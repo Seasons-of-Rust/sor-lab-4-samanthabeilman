@@ -12,7 +12,7 @@ pub struct Card {
 impl Card {
     pub fn fight(&self, other: &Card) -> FightResult {
         let this_fight: (bool, bool) = (self.damage > other.health, other.damage > self.health);
-        
+
         match this_fight {
             (true, false) => return FightResult::Win,
             (false, true) => return FightResult::Loss,
