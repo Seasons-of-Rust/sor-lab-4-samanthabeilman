@@ -14,10 +14,10 @@ impl Card {
         let this_fight: (bool, bool) = (self.damage > other.health, other.damage > self.health);
 
         match this_fight {
-            (true, false) => return FightResult::Win,
-            (false, true) => return FightResult::Loss,
-            (true, true) => return FightResult::Tie,
-            (false, false) => return FightResult::Draw,
+            (true, false) => FightResult::Win,
+            (false, true) => FightResult::Loss,
+            (true, true) => FightResult::Tie,
+            (false, false) => FightResult::Draw,
         }
     }
 

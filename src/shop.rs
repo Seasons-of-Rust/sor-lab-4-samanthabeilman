@@ -31,18 +31,17 @@ impl Shop {
             for other_card in other.cards.iter() {
                 let result = card.print_fight(other_card);
                 match result {
-                    FightResult::Win => tally = tally + 1,
-                    FightResult::Loss => tally = tally - 1,
+                    FightResult::Win => tally += 1,
+                    FightResult::Loss => tally -= 1,
                     _ => (),
                 }
             }
         }
-        if tally > 0 {
-            return FightResult::Win;
-        } else if tally < 0 {
-            return FightResult::Loss;
-        } else {
-            return FightResult::Tie;
+        match tally{
+            0 => FightResult::Tie,
+            d if d > 0 => FightResult::Win,
+            d if d < 0 => FightResult::Loss,
+            _ => unreachable!(),
         }
     }
 }
