@@ -37,7 +37,7 @@ impl Shop {
                 }
             }
         }
-        match tally{
+        match tally {
             0 => FightResult::Tie,
             d if d > 0 => FightResult::Win,
             d if d < 0 => FightResult::Loss,
